@@ -15,13 +15,25 @@ The [X-rays dataset](http://dx.doi.org/10.17632/rscbjbr9sj.3) comes from a resea
 
 Initial estimate of linear dimension of the X-ray dataset by performing PCA, here is the first 20 principal components along with their explained variance ratio. With first two principle components, the variance explained covered about 45% of total variance. 
 
+![PCA](Pics/PCA.png)
 
+While, here is the projection of data into 2D space via PCA. Clearly, linear projection by PCA does not perform well.
 
+![PCA_projection](Pics/PCA_projection.png)
 
+### 4. Models
 
+Isomap, Diffusion map and Laplacian map are performed as non-linear dimension reduction procedure followed by a pre-trained model(MLP) to gain the image classification result. 
 
+Here is the visualization of our final choice for Isomap reduced data input. 5 nearest neighbours are selected and the dimension is reduced to 15.
 
+![15D_5](Pics/15D_5.png)
 
+### 5. Results
+
+Multiple layer perceptron and logistic regression models were applied as evaluation. Both of the two classifiers received a 0.86 test F1 score. 
+
+### 6. Additional Info
 
 The [output.zip](https://drive.google.com/drive/folders/1p5W_IUamyiIPIkoiIPTffYo1pYlQUV1o?usp=sharing) file contains all the standardrized images(5856) in .jpeg format. All the images are gray scale and under 400*400 resolution. each image is named after their own index, e.g. 0.jpeg.
 
